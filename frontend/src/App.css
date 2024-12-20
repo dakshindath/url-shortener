@@ -1,0 +1,873 @@
+/* General Reset */
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, sans-serif; /* Apply Verdana font */
+  background: linear-gradient(135deg, #3E1E68, #FFACAC); /* Set gradient background */
+  color: #333;
+  height: 100%; /* Ensure it covers the full height of the viewport */
+  overflow: auto; /* Allow normal scrolling */
+}
+
+/* Import Teko font */
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@400;700&display=swap');
+
+/* Import Proxima Nova font */
+@import url('https://fonts.googleapis.com/css2?family=Proxima+Nova:wght@400;700&display=swap');
+
+/* Import Verdana font */
+@import url('https://fonts.googleapis.com/css2?family=Verdana:wght@400;700&display=swap');
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent; /* Semi-transparent background */
+  padding: 10px 20px;
+  position: relative;
+  z-index: 2; /* Ensure navbar is above the background animation */
+   /* Add blur effect */
+}
+
+.navbar .logo {
+  font-size: 2.2em; 
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow to the text */
+  font-family: 'Teko', sans-serif; /* Apply Teko font */
+  display: flex;
+  align-items: center;
+}
+
+.navbar .logo span {
+  color: #FFACAC; /* Original color */
+}
+
+.navbar .logo span.url {
+  color: #E45A84; /* Darker shade */
+}
+
+.navbar .nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .nav-links a {
+  color: #FFACAC; /* Match with one of the background colors */
+  text-decoration: none;
+  margin: 0 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  font-family: 'Proxima Nova', sans-serif;
+  font-size: 1.2em; /* Apply Proxima Nova font */
+}
+
+.navbar .nav-links a:hover {
+  background-color: #E45A84; /* Darker shade for hover effect */
+  color: #FFF; /* White text on hover for contrast */
+}
+
+/* Add logout link styling */
+.navbar .nav-links .logout-link {
+  color: #FFACAC; /* Match with one of the background colors */
+  text-decoration: none;
+  margin: 0 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar .nav-links .logout-link:hover {
+  background-color: #E45A84; /* Darker shade for hover effect */
+  color: #FFF; /* White text on hover for contrast */
+}
+
+/* Remove toggle button for navbar */
+.navbar .toggle-button {
+  display: none;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 10px;
+  position: relative; /* Ensures content is above the background */
+  z-index: 1;
+  background: transparent; /* Ensure container background is transparent */
+}
+
+/* Home */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  text-align: center;
+  color: white; /* Ensure text is visible against the background */
+}
+
+.home-container .main-title {
+  font-size: 2.5em;
+  color: #FFACAC; /* Match with one of the background colors */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow to the text */
+}
+
+.home-container .subtitle {
+  font-size: 1.2em;
+  color: #E45A84; /* Match with one of the background colors */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow to the text */
+}
+
+.home-container .button-container .btn {
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1em;
+  background-color: #FFACAC; /* Match with one of the background colors */
+  color: #3E1E68; /* Darker color for better visibility */
+  transition: background-color 0.3s ease; /* Add transition for hover effect */
+}
+
+.home-container .button-container .btn:hover {
+  background-color: #E45A84; /* Darker shade for hover effect */
+  color: #FFF; /* White text on hover for contrast */
+}
+
+.btn-primary {
+  background-color: #FFACAC !important; /* Match with one of the background colors */
+  color: #3E1E68 !important; /* Darker color for better visibility */
+}
+
+.btn-primary:hover {
+  background-color: #E45A84 !important; /* Darker shade for hover effect */
+  color: #FFF !important; /* White text on hover for contrast */
+}
+
+.btn-secondary {
+  background-color: #6c757d !important; /* Grey for secondary button */
+  color: white !important;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268 !important; /* Darker shade for hover effect */
+  transform: scale(1.05); /* Slight scale increase on hover */
+}
+
+/* Forms */
+.card-container {
+  background-color: transparent; /* Ensure container background is transparent */
+  padding: 20px;
+  border-radius: 8px;
+  color: white; /* Ensure text is visible against the background */
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.2); /* Even lighter and more transparent white */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow for a more professional look */
+  padding: 30px; /* Increased padding for better spacing */
+  max-width: 500px; /* Increased max-width for a larger card */
+  margin: 20px auto;
+  position: relative;
+  z-index: 1;
+  color: #3E1E68; /* Darker color for better visibility */
+}
+
+.card h2 {
+  margin-bottom: 20px;
+  color: #FFACAC; /* Match with one of the background colors */
+  font-size: 1.8em; /* Larger font size for the heading */
+  text-align: center; /* Center align the heading */
+}
+
+.card input {
+  width: 100%;
+  padding: 15px 20px; /* Increased padding for better input field size */
+  margin-bottom: 15px; /* Increased margin for better spacing */
+  border: 1px solid #ccc;
+  border-radius: 10px; /* Rounded corners for input fields */
+  font-size: 1rem;
+  box-sizing: border-box;
+  color: #3E1E68; /* Darker color for better visibility */
+}
+
+.card input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); /* Enhanced focus shadow */
+}
+
+.card button {
+  width: 100%;
+  padding: 15px; /* Increased padding for better button size */
+  background-color: #FFACAC; /* Match with one of the background colors */
+  color: #3E1E68; /* Darker color for better visibility */
+  border: none;
+  border-radius: 10px; /* Rounded corners for the button */
+  cursor: pointer;
+  margin-top: 15px; /* Increased margin for better spacing */
+  font-size: 1.2rem; /* Larger font size for the button */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.card button:hover {
+  opacity: 0.9;
+  background-color: #E45A84; /* Darker shade for hover effect */
+  color: #FFF; /* White text on hover for contrast */
+  transform: scale(1.05); /* Slight scale increase on hover */
+}
+
+.card p {
+  text-align: center;
+  margin-top: 20px;
+  color: #E45A84; /* Darker color for better visibility */
+}
+
+.card p a {
+  color: #E45A84; /* Blue color for links */
+  text-decoration: none;
+  transition: color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.card p a:hover {
+  color: #0056b3; /* Darker shade for hover effect */
+}
+
+/* Dashboard */
+.dashboard {
+  padding: 20px;
+  position: relative; /* Ensures it’s above the background */
+  z-index: 1;
+  color: #FFACAC; /* Update welcome text color */
+}
+
+.dashboard h1 {
+  font-size: 1.5em;
+  color: #FFACAC; /* Match with one of the background colors */
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.pagination-container button {
+  margin: 0 5px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #FFACAC; /* Match with one of the background colors */
+  color: #3E1E68; /* Darker color for better visibility */
+  cursor: pointer;
+}
+
+.pagination-container button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination-container button:hover {
+  background-color: #E45A84; /* Darker shade for hover effect */
+  color: #FFF; /* White text on hover for contrast */
+}
+
+/* Search Container */
+.search-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+  color: white; /* Ensure text is visible against the background */
+}
+
+.search-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+  color: #3E1E68; /* Darker color for better visibility */
+}
+
+.search-container .btn-primary,
+.search-container .btn-secondary {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.search-container .btn-primary {
+  background-color: #007bff; /* Blue for primary button */
+  color: white;
+  margin-right: 10px; /* Add margin to separate buttons */
+}
+
+.search-container .btn-primary:hover {
+  background-color: #0056b3; /* Darker shade for hover effect */
+  transform: scale(1.05); /* Slight scale increase on hover */
+}
+
+.search-container .btn-secondary {
+  background-color: #6c757d; /* Grey for secondary button */
+  color: white;
+}
+
+.search-container .btn-secondary:hover {
+  background-color: #5a6268; /* Darker shade for hover effect */
+  transform: scale(1.05); /* Slight scale increase on hover */
+}
+
+.suggestions-list {
+  position: absolute;
+  background: white; /* White background */
+  border: 1px solid #ccc;
+  width: 100%;
+  max-height: 150px; /* Limited max-height */
+  overflow-y: auto;
+  z-index: 1000;
+  top: 40px; /* Adjust based on input height */
+  border-radius: 5px; /* Rounded corners */
+}
+
+.suggestions-list li {
+  padding: 10px;
+  cursor: pointer;
+  color: #ffffff;
+  transition: background-color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.suggestions-list li:nth-child(even) {
+  background-color: #3E1E68; /* Light grey background for even items */
+  color: #ffffff;
+}
+.suggestions-list li:nth-child(odd) {
+  color: rgb(255, 255, 255); /* Light grey background for odd items */
+}
+/* .suggestions-list li:hover {
+  background: #E45A84; 
+  color: #FFF; 
+} */
+
+/* URL List */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: #3E1E68; /* Set background color to #3E1E68 */
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white; /* Ensure text is visible against the background */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+li:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.1); /* Alternating row colors */
+}
+
+li:hover {
+  transform: translateY(-5px); /* Lift the item on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+.url-list-container {
+  background-color: #3E1E68; /* Set background color to #3E1E68 */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow to container */
+}
+
+li a {
+  color: #FFACAC; /* Match with one of the background colors */
+  text-decoration: none;
+  transition: color 0.3s ease, background-color 0.3s ease; /* Add transition for hover effect */
+  padding: 5px 10px; /* Add padding for better appearance */
+  border-radius: 5px; /* Add border-radius for rounded corners */
+}
+
+li a:hover {
+  text-decoration: none;
+  color: #FFF; /* White text on hover for contrast */
+  background-color: #E45A84; /* Darker shade for hover effect */
+}
+
+li .url-info {
+  display: flex;
+  flex-direction: column;
+}
+
+li .url-info span {
+  font-size: 0.9em;
+  color: #FFACAC; /* Match with one of the background colors */
+}
+
+li .url-info span:hover {
+  color: #E45A84; /* Darker shade for hover effect */
+}
+
+li .actions {
+  display: flex;
+  align-items: center;
+}
+
+li .actions button {
+  background: none;
+  border: none;
+  color: #db1d1d; /* Match with one of the background colors */
+  cursor: pointer;
+  margin-left: 10px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+li .actions button:hover {
+  color: #E45A84; /* Darker shade for hover effect */
+  transform: scale(1.1); /* Slight scale increase on hover */
+}
+
+li .actions .edit-btn {
+  background-color: #6c757d; /* Grey for secondary button */
+  color: white;
+  padding: 8px 12px; /* Adjust padding for better appearance */
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9em; /* Adjust font size */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+li .actions .edit-btn:hover {
+  background-color: #5a6268; /* Darker shade for hover effect */
+  transform: scale(1.05); /* Slight scale increase on hover */
+}
+
+li .actions .delete-btn {
+  background-color: #db1d1d; /* Red for delete button */
+  color: white;
+  padding: 8px 12px; /* Adjust padding for better appearance */
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9em; /* Adjust font size */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+li .actions .delete-btn:hover {
+  background-color: darkred; /* Darker red on hover */
+  transform: scale(1.05); /* Slight scale increase on hover */
+}
+
+/* Background Animation */
+
+@keyframes move {
+  100% {
+    transform: translate3d(0, 0, 1px) rotate(360deg);
+  }
+}
+
+.background {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: #3E1E68;
+  overflow: hidden;
+  z-index: -1; /* Ensure background is behind other content */
+}
+
+.background span {
+  width: 10vmin;
+  height: 10vmin;
+  border-radius: 10vmin;
+  backface-visibility: hidden;
+  position: absolute;
+  animation: move;
+  animation-duration: 31s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.background span:nth-child(0) {
+  color: #FFACAC;
+  top: 72%;
+  left: 28%;
+  animation-duration: 142s;
+  animation-delay: -93s;
+  transform-origin: -13vw 11vh;
+  box-shadow: -20vmin 0 3.172589081532701vmin currentColor;
+}
+.background span:nth-child(1) {
+  color: #E45A84;
+  top: 21%;
+  left: 29%;
+  animation-duration: 13s;
+  animation-delay: -62s;
+  transform-origin: 9vw 22vh;
+  box-shadow: 20vmin 0 2.768542420189545vmin currentColor;
+}
+.background span:nth-child(2) {
+  color: #583C87;
+  top: 37%;
+  left: 35%;
+  animation-duration: 149s;
+  animation-delay: -3s;
+  transform-origin: 17vw 24vh;
+  box-shadow: 20vmin 0 3.204817846294053vmin currentColor;
+}
+.background span:nth-child(3) {
+  color: #583C87;
+  top: 61%;
+  left: 68%;
+  animation-duration: 34s;
+  animation-delay: -58s;
+  transform-origin: 18vw -23vh;
+  box-shadow: 20vmin 0 3.323477865014581vmin currentColor;
+}
+.background span:nth-child(4) {
+  color: #E45A84;
+  top: 31%;
+  left: 64%;
+  animation-duration: 77s;
+  animation-delay: -36s;
+  transform-origin: 24vw 17vh;
+  box-shadow: -20vmin 0 2.5293543501694105vmin currentColor;
+}
+.background span:nth-child(5) {
+  color: #FFACAC;
+  top: 94%;
+  left: 3%;
+  animation-duration: 123s;
+  animation-delay: -136s;
+  transform-origin: 24vw 20vh;
+  box-shadow: -20vmin 0 2.699046510030465vmin currentColor;
+}
+.background span:nth-child(6) {
+  color: #E45A84;
+  top: 19%;
+  left: 97%;
+  animation-duration: 120s;
+  animation-delay: -158s;
+  transform-origin: 24vw -16vh;
+  box-shadow: -20vmin 0 2.628716700972914vmin currentColor;
+}
+.background span:nth-child(7) {
+  color: #583C87;
+  top: 82%;
+  left: 81%;
+  animation-duration: 29s;
+  animation-delay: -76s;
+  transform-origin: 0vw -22vh;
+  box-shadow: 20vmin 0 2.7142638288579777vmin currentColor;
+}
+.background span:nth-child(8) {
+  color: #FFACAC;
+  top: 10%;
+  left: 21%;
+  animation-duration: 135s;
+  animation-delay: -160s;
+  transform-origin: 14vw -23vh;
+  box-shadow: 20vmin 0 2.547839976089705vmin currentColor;
+}
+.background span:nth-child(9) {
+  color: #FFACAC;
+  top: 57%;
+  left: 24%;
+  animation-duration: 64s;
+  animation-delay: -76s;
+  transform-origin: 20vw -12vh;
+  box-shadow: 20vmin 0 2.9857290805148966vmin currentColor;
+}
+.background span:nth-child(10) {
+  color: #E45A84;
+  top: 72%;
+  left: 43%;
+  animation-duration: 11s;
+  animation-delay: -132s;
+  transform-origin: 9vw 3vh;
+  box-shadow: -20vmin 0 2.5477373800522893vmin currentColor;
+}
+.background span:nth-child(11) {
+  color: #E45A84;
+  top: 40%;
+  left: 72%;
+  animation-duration: 57s;
+  animation-delay: -89s;
+  transform-origin: -7vw 10vh;
+  box-shadow: 20vmin 0 2.859292946985259vmin currentColor;
+}
+.background span:nth-child(12) {
+  color: #583C87;
+  top: 79%;
+  left: 82%;
+  animation-duration: 30s;
+  animation-delay: -64s;
+  transform-origin: 16vw -16vh;
+  box-shadow: -20vmin 0 2.762678937609446vmin currentColor;
+}
+.background span:nth-child(13) {
+  color: #583C87;
+  top: 22%;
+  left: 81%;
+  animation-duration: 127s;
+  animation-delay: -171s;
+  transform-origin: 6vw 4vh;
+  box-shadow: 20vmin 0 2.655176303327417vmin currentColor;
+}
+.background span:nth-child(14) {
+  color: #E45A84;
+  top: 99%;
+  left: 78%;
+  animation-duration: 73s;
+  animation-delay: -41s;
+  transform-origin: 8vw -22vh;
+  box-shadow: 20vmin 0 3.122754956683184vmin currentColor;
+}
+.background span:nth-child(15) {
+  color: #583C87;
+  top: 34%;
+  left: 46%;
+  animation-duration: 98s;
+  animation-delay: -75s;
+  transform-origin: 2vw -17vh;
+  box-shadow: -20vmin 0 3.2979647386215283vmin currentColor;
+}
+.background span:nth-child(16) {
+  color: #FFACAC;
+  top: 29%;
+  left: 7%;
+  animation-duration: 181s;
+  animation-delay: -7s;
+  transform-origin: 25vw 6vh;
+  box-shadow: 20vmin 0 3.420424883971007vmin currentColor;
+}
+.background span:nth-child(17) {
+  color: #E45A84;
+  top: 39%;
+  left: 67%;
+  animation-duration: 133s;
+  animation-delay: -123s;
+  transform-origin: -16vw -19vh;
+  box-shadow: -20vmin 0 3.103414616114545vmin currentColor;
+}
+.background span:nth-child(18) {
+  color: #583C87;
+  top: 57%;
+  left: 81%;
+  animation-duration: 110s;
+  animation-delay: -99s;
+  transform-origin: -7vw 0vh;
+  box-shadow: -20vmin 0 3.448691944070257vmin currentColor;
+}
+
+/* Ensure content is above the background */
+.content {
+  position: relative;
+  z-index: 1;
+  background: transparent; /* Ensure background is transparent */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .home-container .main-title {
+    font-size: 2em;
+  }
+
+  li {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .search-container {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .search-input {
+    margin-bottom: 10px;
+  }
+
+  .navbar .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar .nav-links.active {
+    display: flex;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 576px) {
+  .navbar .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar .nav-links.active {
+    display: flex;
+  }
+
+  .navbar .toggle-button {
+    display: flex;
+  }
+}
+
+/* Edit Popup */
+.edit-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure popup is above other content */
+}
+
+.edit-popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for better separation */
+  width: 90%;
+  max-width: 500px;
+}
+
+.edit-popup-content h2 {
+  margin-bottom: 20px;
+  color: #3E1E68; /* Darker color for better visibility */
+}
+
+.edit-popup-content form {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-popup-content form input {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #3E1E68; /* Darker color for better visibility */
+}
+
+.edit-popup-content form button {
+  padding: 10px;
+  background-color: #FFACAC; /* Match with one of the background colors */
+  color: #3E1E68; /* Darker color for better visibility */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.edit-popup-content form button:hover {
+  background-color: #E45A84; /* Darker shade for hover effect */
+  color: #FFF; /* White text on hover for contrast */
+  transform: scale(1.05); /* Slight scale increase on hover */
+}
+
+.edit-popup-content form .btn-secondary {
+  background-color: #6c757d; /* Grey for secondary button */
+  color: white;
+  margin-top: 10px; /* Add margin to separate buttons */
+}
+
+.edit-popup-content form .btn-secondary:hover {
+  background-color: #5a6268; /* Darker shade for hover effect */
+  transform: scale(1.05); /* Slight scale increase on hover */
+}
+
+/* Delete Confirmation Popup */
+.delete-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure popup is above other content */
+}
+
+.delete-popup-content {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for better separation */
+  width: 90%;
+  max-width: 400px;
+  text-align: center; /* Center align text */
+}
+
+.delete-popup-content h2 {
+  margin-bottom: 20px;
+  color: #3E1E68; /* Darker color for better visibility */
+  font-size: 1.5em; /* Increase font size */
+}
+
+.delete-popup-content p {
+  margin-bottom: 20px;
+  color: #3E1E68; /* Darker color for better visibility */
+  font-size: 1.1em; /* Increase font size */
+}
+
+.delete-popup-content .btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Add space between buttons */
+}
+
+.delete-popup-content button {
+  padding: 10px 20px;
+  background-color: #FFACAC; /* Match with one of the background colors */
+  color: #3E1E68; /* Darker color for better visibility */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.delete-popup-content button:hover {
+  background-color: #E45A84; /* Darker shade for hover effect */
+  color: #FFF; /* White text on hover for contrast */
+  transform: scale(1.05); /* Slight scale increase on hover */
+}
+
+.delete-popup-content .btn-secondary {
+  background-color: #6c757d; /* Grey for secondary button */
+  color: white;
+}
+
+.delete-popup-content .btn-secondary:hover {
+  background-color: #5a6268; /* Darker shade for hover effect */
+  transform: scale(1.05); /* Slight scale increase on hover */
+}
